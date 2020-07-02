@@ -23,7 +23,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 		//Detecting commands
 		switch (update.getMessage().getText().toLowerCase()) {
 			case "/help":
-				sendM("¡Hola " + update.getMessage().getFrom().getFirstName() + "!" + 
+				sendM("Â¡Hola " + update.getMessage().getFrom().getFirstName() + "!" + 
 						"\n/start - Iniciar un nuevo juego" +
 						"\n/exit - Borrar partida actual",chatID);
 				break;
@@ -31,7 +31,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 			case "/exit":
 				if(userList.containsKey(userID)) {
 					userList.remove(userID);
-					sendM("Partida borrada con éxito.\nEscribe /start para iniciar una nueva.",chatID);
+					sendM("Partida borrada con Ã©xito.\nEscribe /start para iniciar una nueva.",chatID);
 				}else {
 					sendM(update.getMessage().getFrom().getFirstName() + ", no has iniciado ninguna partida.\n"
 							+ "Escribe /start para iniciar una nueva.",chatID);					
@@ -42,7 +42,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 			case "/start":
 				//User exists in DB
 				if(userList.containsKey(userID)) {
-					sendM("¡No dejes colgado al cactus!",chatID);
+					sendM("Â¡No dejes colgado al cactus!",chatID);
 					if(((hg.MAX_ATTEMPTS) - userList.get(userID).attempts) > 1 )
 						sendM("Te quedan " + ((hg.MAX_ATTEMPTS) - 
 								userList.get(userID).attempts) + " intentos.",chatID);	
@@ -56,8 +56,8 @@ public class TelegramBot extends TelegramLongPollingBot{
 					hg = new HangmanGame(userID,chatID);				
 					//Storing user id
 					userList.put(userID, hg);				
-					sendM("| Bienvenido al clásico juego del ahorcado |",chatID);
-					sendM("¿Serás capaz de descubrir la siguiente palabra?\n" + printWord(userID),chatID);
+					sendM("| Bienvenido al clÃ¡sico juego del ahorcado |",chatID);
+					sendM("Â¿SerÃ¡s capaz de descubrir la siguiente palabra?\n" + printWord(userID),chatID);
 					sendM("Escribe una letra...",chatID);	
 					break;	
 				}
@@ -80,7 +80,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 						switch (matchingChar(userID, userList.get(userID).charInPlay.charAt(0))) {
 							case 1:
 								//Case repeating letter
-								sendM("¡FALLO! La letra " + userList.get(userID).charInPlay.charAt(0) + " está repetida",chatID);
+								sendM("Â¡FALLO! La letra " + userList.get(userID).charInPlay.charAt(0) + " estÃ¡ repetida",chatID);
 								if((hg.MAX_ATTEMPTS - userList.get(userID).attempts)>1)
 									sendM("Te quedan " + (hg.MAX_ATTEMPTS - userList.get(userID).attempts) + " intentos.",chatID);	
 								else {
@@ -92,13 +92,13 @@ public class TelegramBot extends TelegramLongPollingBot{
 								break;
 							case 2:
 								//case right letter
-								sendM("¡ACIERTO! La letra " + userList.get(userID).charInPlay.charAt(0) + " ha sido encontrada.",chatID);
+								sendM("Â¡ACIERTO! La letra " + userList.get(userID).charInPlay.charAt(0) + " ha sido encontrada.",chatID);
 								if((userList.get(userID).totalChars - userList.get(userID).rightChars == 1))
 									userList.get(userID).rightChars++;
 								break;
 							case 3:
 								//case wrong letter
-								sendM("¡FALLO! La letra " + userList.get(userID).charInPlay.charAt(0) + " no ha sido encontrada.",chatID);
+								sendM("Â¡FALLO! La letra " + userList.get(userID).charInPlay.charAt(0) + " no ha sido encontrada.",chatID);
 								if((hg.MAX_ATTEMPTS - userList.get(userID).attempts)>1)
 									sendM("Te quedan " + (hg.MAX_ATTEMPTS - userList.get(userID).attempts) + " intentos.",chatID);	
 								else {
@@ -113,7 +113,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 								(userList.get(userID).totalChars - userList.get(userID).rightChars) == 0) {							
 							//Check final score
 							if ((userList.get(userID).totalChars - userList.get(userID).rightChars) == 0) {
-								sendM("¡HAS GANADO! La palabra es: \n" + printWord(userID),chatID);
+								sendM("Â¡HAS GANADO! La palabra es: \n" + printWord(userID),chatID);
 								//INSERTAR FOTO VICTORIA AQUI <<<<<<<<<<---------------------
 								userList.get(userID).hangmanIsStarted = false;
 								userList.remove(userID);
@@ -122,7 +122,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 								sendPh(userID, chatID);
 								for (char c : userList.get(userID).word.toCharArray())
 									userList.get(userID).letters.replace(c, true);												
-								sendM("¡HAS SIDO DERROTADO! La palabra era: \n" + printWord(userID),chatID);							
+								sendM("Â¡HAS SIDO DERROTADO! La palabra era: \n" + printWord(userID),chatID);							
 								userList.get(userID).hangmanIsStarted = false;
 								userList.remove(userID);
 								sendM("Escribe /start para jugar de nuevo.",chatID);
@@ -133,7 +133,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 						sendM("Escribe una letra...",chatID);
 					}
 				}else
-					sendM(update.getMessage().getFrom().getFirstName() + ", has elegido una opción no existente",chatID);						
+					sendM(update.getMessage().getFrom().getFirstName() + ", has elegido una opciÃ³n no existente",chatID);						
 		}			
 	}
 	
@@ -169,12 +169,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 			}
 		}
 	}
-	
-	/////////////////////////////////////////////////////	
-	////////////////// HANGMAN METHODS //////////////////
-	/////////////////////////////////////////////////////
-	
-	
+
 	//This method sends hang man photo
 	public void sendPh(int uID, Long l) {
 		SendPhoto sp = new SendPhoto();
@@ -202,12 +197,12 @@ public class TelegramBot extends TelegramLongPollingBot{
 	
 	@Override
 	public String getBotUsername() {
-		return "SilindeBot";
+		return "your_bot_name";
 	}
 
 	@Override
 	public String getBotToken() {
-		return "1168114454:AAHZFy3i0Gxh8gswzwAi7p84okZWd3s3NqY";
+		return "your_bot_token";
 	}
 
 }
