@@ -4,10 +4,10 @@
 
 # **Silinde87's Hangman Game-TelegramBot**
  He desarrollado una versión propia del clásico juego del ahorcado y utilizado la API de Telegram para poderlo usar como bot en la aplicación de mensajería.
- Se trata de una primera práctica de desarrollo en Java combinando varios elementos.
+ Se trata de una primera práctica de desarrollo en Java combinando varios elementos. :video_game:
 
-## How to
+## How to use it
 - Añade el bot "Silinde87_HangMan" a telegram
 - Ejecuta el archivo HangmanGame.jar
-## How 3
- > @Sweetbrush - Graphic Designer :+1: por las ilustraciones.
+## Thanks!
+ > [@Sweetbrush](https://www.instagram.com/sweetbrush_/) :+1: por las ilustraciones.
