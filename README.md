@@ -10,4 +10,4 @@
 - Añade el bot "Silinde87_HangMan" a telegram
 - Ejecuta el archivo HangmanGame.jar
 ### How 3
-> @Sweetbrush - Graphic Designer :+1: por las ilustraciones.
+ @Sweetbrush - Graphic Designer :+1: por las ilustraciones.
