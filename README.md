@@ -14,11 +14,20 @@
 <p>
 
 
-## How to use it
-- Añade el bot "Silinde87_HangMan" a telegram
-- Ejecuta el archivo HangmanGame.jar
-> - Add "Silinde87_HangMan" bot in Telegram application
-> - Run HangmanGame.jar file
+## Roadmap
+- [ ] Soporte para funcionar en Telegram mediante Bot individual o Bot en grupo desde un mismo .jar
+- [ ] Soporte diccionario de palabras en el mismo idioma del usuario
 
-## Thanks!
- [@Sweetbrush](https://www.instagram.com/sweetbrush_/) :+1: por las ilustraciones.
+
+## How to use it
+1. Añade el bot "Silinde87_HangMan" a telegram
+2. Ejecuta el archivo HangmanGame.jar
+> 1. Add "Silinde87_HangMan" bot in Telegram application
+> 2. Run HangmanGame.jar file
+
+## License
+This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+[![alt text](https://uc791ef5d3915a37702fc9a692e3.previews.dropboxusercontent.com/p/thumb/AA1kYwu9_hXcqRhlvSNAnhT3UcpcL0rpbhDfXBAT4hwrR4TMSJSc9EfCiw4HpKW7ikMrPHp0c4qZxiSs0xyfS23rEBrvpmZmHd5bmeXpLwQOUtGqtd7oOjmVyAEBGld3YFzVKhQg7AGfqlfXwIVj5uHshpjqJJQfnRdhKMXRojfwkgO32zUBmHugDgqVz4aaUqR_PpDwu8riqfdmHuWxYIuVmLS2pNnyBHujhsco9aquNYskYvBD275ne0R3JmpoxEeL_VtMEsD6pQAHYXnDfq0UWQV3udqV7EA0P7es11kNg7NLQmvsoUkDfO5ohj85rL4DY2FWq32MeP7iiQfy9mwZaq-Mw_m5bMSZ41PLnaDray8Mlf3xe3sJ8NMiUGytrg7jtQPcUGSdrnr6EkuFYaPg/p.png?fv_content=true&size_mode=5)](https://creativecommons.org/licenses/by-nc-nd/4.0/ "License")
+
+## Credits
+ Author: [@silinde87](https://github.com/Silinde87). Thanks! [@Sweetbrush](https://www.instagram.com/sweetbrush_/) :+1: por las ilustraciones.
