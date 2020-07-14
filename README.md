@@ -15,7 +15,7 @@
 
 
 ## Roadmap
-- [ ] Soporte para funcionar en Telegram mediante Bot individual o Bot en grupo desde un mismo .jar
+- [X] Soporte para funcionar en Telegram mediante Bot individual o Bot en grupo desde un mismo .jar
 - [ ] Soporte diccionario de palabras en el mismo idioma del usuario
 
 
