@@ -7,7 +7,7 @@ public class HangmanGame {
 	
 	public int totalChars = 0, rightChars = 0, attempts = 0, userID;
 	public final int MAX_ATTEMPTS = 6;
-	public final String REGEX = "[^A-Za-zÑñ]+";
+	public final String REGEX = "[^A-Za-zÃ‘Ã±]+";
 	public String word = "", printedWord = "", charInPlay = "";	
 	public final Map<Character,Boolean> letters = new HashMap<Character,Boolean>();
 	public long chatID;
@@ -25,7 +25,7 @@ public class HangmanGame {
 		}
 		totalChars = word.length();
 		
-		for (Character c : "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".toCharArray()) {
+		for (Character c : "ABCDEFGHIJKLMNÃ‘OPQRSTUVWXYZ".toCharArray()) {
 			letters.put(c, false);
 		}		
 	}	
@@ -43,11 +43,11 @@ public class HangmanGame {
 		fr.close();	
 		int i = (int)Math.ceil(Math.random()*numWords);
 		word = list.get(i)
-				.replace('á', 'a').replace('à', 'a')
-				.replace('é', 'e').replace('è', 'e')
-				.replace('í', 'i').replace('ì', 'i')
-				.replace('ó', 'o').replace('ò', 'o')
-				.replace('ú', 'u').replace('ù', 'u')
+				.replace('Ã¡', 'a').replace('Ã ', 'a')
+				.replace('Ã©', 'e').replace('Ã¨', 'e')
+				.replace('Ã­', 'i').replace('Ã¬', 'i')
+				.replace('Ã³', 'o').replace('Ã²', 'o')
+				.replace('Ãº', 'u').replace('Ã¹', 'u')
 				.toUpperCase();		
 	}	
 
