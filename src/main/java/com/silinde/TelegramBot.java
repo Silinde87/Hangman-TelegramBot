@@ -77,7 +77,8 @@ public class TelegramBot extends TelegramLongPollingBot{
 						if((userList.get(userID).charInPlay.isEmpty() || userList.get(userID).charInPlay.matches(hg.REGEX)) ||
 								(chInPlay==0 && userList.get(userID).charInPlay.length()>1) ||
 								(chInPlay==1 && userList.get(userID).charInPlay.length()>2)) {
-							sendM(update.getMessage().getFrom().getFirstName() + ", debes escribir una sola letra. Prueba de nuevo...",chatID);
+							sendM(update.getMessage().getFrom().getFirstName() + 
+									", debes escribir una sola letra. Prueba de nuevo...",chatID);
 							return;
 						}						
 					
@@ -97,13 +98,15 @@ public class TelegramBot extends TelegramLongPollingBot{
 									userList.get(userID).rightChars++;
 									break;
 								}else {
-									mess.append("¡ACIERTO!\nLa letra " + userList.get(userID).charInPlay.charAt(chInPlay) + " ha sido encontrada.\n");
+									mess.append("¡ACIERTO!\nLa letra " + userList.get(userID).charInPlay.charAt(chInPlay) + 
+											" ha sido encontrada.\n");
 									break;
 								}
 
 							case 3:
 								//case wrong letter
-								mess.append("¡FALLO!\nLa letra " + userList.get(userID).charInPlay.charAt(chInPlay) + " no ha sido encontrada.");		
+								mess.append("¡FALLO!\nLa letra " + userList.get(userID).charInPlay.charAt(chInPlay) + 
+										" no ha sido encontrada.");		
 								if ((hg.MAX_ATTEMPTS - userList.get(userID).attempts)==0)						
 									break;	
 								attLeft(userID, mess, chatID);								
@@ -114,7 +117,8 @@ public class TelegramBot extends TelegramLongPollingBot{
 								(userList.get(userID).totalChars - userList.get(userID).rightChars) == 0) {							
 							//Check final score
 							if ((userList.get(userID).totalChars - userList.get(userID).rightChars) == 0) {
-								mess.append("¡HAS GANADO!\nLa palabra es: " + printWord(userID) + "\n\nEscribe /start para jugar de nuevo.");
+								mess.append("¡HAS GANADO!\nLa palabra es: " + printWord(userID) + 
+										"\n\nEscribe /start para jugar de nuevo.");
 								sendPh(userID, chatID,22);
 								sendM(mess.toString(),chatID);
 								userList.get(userID).hangmanIsStarted = false;
@@ -123,13 +127,15 @@ public class TelegramBot extends TelegramLongPollingBot{
 								sendPh(userID, chatID,(hg.MAX_ATTEMPTS - userList.get(userID).attempts));
 								for (char c : userList.get(userID).word.toCharArray())
 									userList.get(userID).letters.replace(c, true);												
-								sendM("¡HAS SIDO DERROTADO!\nLa palabra era: " + printWord(userID) + "\n\nEscribe /start para jugar de nuevo.",chatID);							
+								sendM("¡HAS SIDO DERROTADO!\nLa palabra era: " + printWord(userID) + 
+										"\n\nEscribe /start para jugar de nuevo.",chatID);							
 								userList.get(userID).hangmanIsStarted = false;
 								userList.remove(userID);								
 							}
 							break;
 						}
-						mess.append(printWord(userID) + "\n\n" + update.getMessage().getFrom().getFirstName() + ", escribe una letra...");
+						mess.append(printWord(userID) + "\n\n" + update.getMessage().getFrom().getFirstName() + 
+								", escribe una letra...");
 						sendM(mess.toString(),chatID);
 						mess.setLength(0);						
 					}
